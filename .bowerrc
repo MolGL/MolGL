@@ -1,0 +1,9 @@
+{
+  "directory": "bower_components",
+  "analytics": false,
+  "color": true,
+  "interactive": true,
+  "timeout": 120000,
+  "strict-ssl": false,
+  "tmp": "~/.bower/tmp"
+}
