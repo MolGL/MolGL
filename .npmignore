@@ -1,0 +1,30 @@
+# By default, the following paths and files are ignored, so there's no need to add them to .npmignore explicitly:
+# .*.swp
+# ._*
+# .DS_Store
+# .git
+# .hg
+# .npmrc
+# .lock-wscript
+# .svn
+# .wafpickle-*
+# config.gypi
+# CVS
+# npm-debug.log
+
+# The following paths and files are never ignored, so I'm adding them to .npmignore is pointless:
+bower.json
+package.json
+README.md
+CHANGELOG.md
+LICENSE
+
+# Build folder for public.
+build
+build/.DS_Store
+build/*.log
+build/._*
+*.node
+
+# Distribution folder to go LIVE.
+dist
