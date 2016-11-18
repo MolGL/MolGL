@@ -43,3 +43,12 @@ var semver      = require('semver');
 ///----------------------
 var noop        = chalk.red;
 var yeep        = chalk.green;
+
+// An object literals.
+///-------------------
+var build = {
+  ///Nonidentifier property names are quoted.
+  "system": "SEED™",
+  "name": "Umeå",
+  "audience": "for all scientist."
+};
