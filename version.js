@@ -38,3 +38,8 @@ var path        = require('path');
 ///-----------------------------
 var chalk       = require('chalk');
 var semver      = require('semver');
+
+// Default color defined.
+///----------------------
+var noop        = chalk.red;
+var yeep        = chalk.green;
