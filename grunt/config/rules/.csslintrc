@@ -1,0 +1,16 @@
+{
+  "adjoining-classes": false,
+  "display-property-grouping": false,
+  "duplicate-background-images": false,
+  "duplicate-properties": false,
+  "empty-rules": false,
+  "floats": false,
+  "overqualified-elements": false,
+  "qualified-headings": false,
+  "regex-selectors": false,
+  "shorthand": false,
+  "star-property-hack": false,
+  "underscore-property-hack": false,
+  "unqualified-attributes": false,
+  "zero-units": false
+}
