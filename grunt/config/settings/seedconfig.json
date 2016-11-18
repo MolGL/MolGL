@@ -1,0 +1,88 @@
+{
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "admin": {
+    "active": true,
+    "who": [
+      "iamprabhat",
+      "sequomics"
+    ]
+  },
+  "superAdmin": {
+    "active": true,
+    "who": [
+      "sequomics",
+      "research"
+    ]
+  },
+  "db": {
+    "hosts": "localhost",
+    "database": "meltxpert",
+    "options": {
+      "db": {
+        "w": 1
+      },
+      "server": {
+        "poolSize": 5,
+        "socketOptions": {
+          "keepAlive": 1
+        }
+      }
+    }
+  },
+  "deployment": {
+    "strategy": "single"
+  },
+  "http": {
+    "port": 9001,
+    "proxy": {
+      "host": "proxy",
+      "port": 8080
+    },
+    "secureFlag": false
+  },
+  "mail": {
+    "sender": "do.not.reply@sequomics.com",
+    "smtp": {
+      "host": "mail.sequomics.com",
+      "port": 25,
+      "debug": true,
+      "tls": {
+        "rejectUnauthorized": false
+      }
+    }
+  },
+  "session": {
+    "secret": "—————————",
+    "tokenExpirationMinutes": 5,
+    "tokenLength": 64,
+    "tokenExpirationDays": 30
+  },
+  "account": {
+    "accountNameMinlength": 4,
+    "accountNameMaxlength": 120,
+    "forgotPasswordTokenExpiryInDays": 1,
+    "autoResendEmailVerification": true,
+    "emailVerifingTokenExpiryInDays": 30,
+    "emailHasAlreadyVerified": "Your e-mail address has been already verified.",
+    "recoverAccountPasswordTokenExpiredMessage": "The resource your are looking for has been expired!, please try again later.",
+    "recoverAccountPasswordTokenVerifiedMessage": "Your e-mail address has been verified."
+  },
+  "audit": {
+    "defaultCreatedBy": "SYSTEM"
+  },
+  "access": {
+    "defaultPermissions": [
+      {
+        "access": "standard"
+      },
+      {
+        "study": "participant"
+      },
+      {
+        "project": "collaborator"
+      }
+    ]
+  }
+}
