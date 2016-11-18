@@ -24,3 +24,7 @@
  * --/The Heart of Version-ing System/-- of "MolGL®".
  * ___________________________________________________________________________
  */
+
+// Invoking strict mode.
+///@purpose: Strict mode applies to entire scripts or to individual functions.
+"use strict";
