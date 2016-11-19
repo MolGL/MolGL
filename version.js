@@ -103,6 +103,10 @@ var pkg  = JSON.parse(fs.readFileSync('./package.json', {
 
 // To get credential(s) information.
 ///---------------------------------
-var pkg  = JSON.parse(fs.readFileSync('./secret.json', {
+var ftp  = JSON.parse(fs.readFileSync('./secret.json', {
+  encoding: "utf8"
+}));
+
+var aws  = JSON.parse(fs.readFileSync('./aws.json', {
   encoding: "utf8"
 }));
