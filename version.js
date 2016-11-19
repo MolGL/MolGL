@@ -110,3 +110,11 @@ var ftp  = JSON.parse(fs.readFileSync('./secret.json', {
 var aws  = JSON.parse(fs.readFileSync('./aws.json', {
   encoding: "utf8"
 }));
+
+// To sync NPM credential(s) information.
+// Do not store credentials in the git repo,
+// store them separately and read from a secret file.
+///--------------------------------------------------
+var npm  = JSON.parse(fs.readFileSync('./npm.json', {
+  encoding: "utf8"
+}));
