@@ -87,7 +87,7 @@ var license = [
 
 // A citation of MolGL®.
 ///---------------------
-var cite = JSON.parse(fs.readFileSync('citation.json', {
+var cite = JSON.parse(fs.readFileSync('./citation.json', {
   encoding: "utf8"
 }));
 
