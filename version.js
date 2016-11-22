@@ -118,3 +118,7 @@ var aws  = JSON.parse(fs.readFileSync('./aws.json', {
 var npm  = JSON.parse(fs.readFileSync('./npm.json', {
   encoding: "utf8"
 }));
+
+// Global variables.
+//=~~~~~~~~~~~~~~~~~
+var rootPath    = './';
