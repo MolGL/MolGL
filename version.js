@@ -122,3 +122,4 @@ var npm  = JSON.parse(fs.readFileSync('./npm.json', {
 // Global variables.
 //=~~~~~~~~~~~~~~~~~
 var rootPath    = './';
+var corePath    = './core/';
