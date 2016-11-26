@@ -123,3 +123,13 @@ var npm  = JSON.parse(fs.readFileSync('./npm.json', {
 //=~~~~~~~~~~~~~~~~~
 var rootPath    = './';
 var corePath    = './core/';
+
+// An object with no properties.
+// -----------------------------
+var replaceHandlers = {};
+
+// A function to register `ReplaceHandler`.
+///----------------------------------------
+function registerReplaceHandler(keyword, handler) {
+  replaceHandlers[keyword] = handler;
+}
