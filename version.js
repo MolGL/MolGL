@@ -133,3 +133,61 @@ var replaceHandlers = {};
 function registerReplaceHandler(keyword, handler) {
   replaceHandlers[keyword] = handler;
 }
+
+/*!
+ * Replace %(id)s in strings with values in objects(s).
+ * ----------------------------------------------------
+ * Given a string like `"Hello %(name)s from %(user.country)s"`
+ * and an object like `{name:"Prabhat", user:{country:"India"}}` would,
+ * return `"Hello Prabhat from India"`.
+ * ----------------------------------------------------
+ * @param {string} str string to do replacements in,
+ * @param {Object|Object[]} params one or more objects.
+ * @returns {string} string with replaced parts.
+ */
+var replaceParams = (function() {
+  
+  var replaceParamsRE = /%\(([^\)]+)\)s/g;
+  
+  return function(str, params) {
+    if (!params.length) {
+      params = [params];
+    }
+    return str.replace(replaceParamsRE, function(match, key) {
+      var colonNdx = key.indexOf(":");
+      if (colonNdx >= 0) {
+        try {
+          var hanson = null;
+          var args = hanson.parse("{" + key + "}");
+          var handlerName = Object.keys(args)[0];
+          var handler = replaceHandlers[handlerName];
+          if (handler) {
+            return handler(args[handlerName]);
+          }
+          console.error(noop("SEED™: Unknown substition handler: " + handlerName));
+        } catch(e) {
+          console.error(noop(e));
+          console.error(noop("SEED™: Bad substitution: %(" + key + ")s"));
+        }
+      } else {
+        // handle normal substitutions.
+        var keys = key.split('.');
+        for (var ii = 0; ii < params.length; ++ii) {
+          var obj = params[ii];
+          for (var jj = 0; jj < keys.length; ++jj) {
+            key = keys[jj];
+            obj = obj[key];
+            if (obj === undefined) {
+              break;
+            }
+          }
+          if (obj !== undefined) {
+            return obj;
+          }
+        }
+      }
+      console.error(noop("SEED™: Unknown key: " + key));
+      return "%(" + key + ")s";
+    });
+  };
+}());
