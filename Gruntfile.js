@@ -34,3 +34,7 @@
 // # Usage: $ node -v
 // # Usage: $ npm -v
 // # Usage: $ grunt -version
+
+// Invoking strict mode.
+// @purpose: Strict mode applies to entire scripts or to individual functions.
+"use strict";
