@@ -38,3 +38,7 @@
 // Invoking strict mode.
 // @purpose: Strict mode applies to entire scripts or to individual functions.
 "use strict";
+
+// To load required Node module.
+// -----------------------------
+var os         = require('os');
